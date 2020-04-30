@@ -1,0 +1,6 @@
+# Ignore list for: kicad
+*.bck
+*-cache.lib
+*.kicad_pcb-bak
+*.sch-bak
+*-cache
