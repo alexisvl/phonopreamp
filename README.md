@@ -15,6 +15,10 @@ The CAD files were created with a development build of KiCad from April 2020; a 
 
 This repository includes a Revision B, which I have not yet actually built. See the [changelog] for more information.
 
+## Gerbers
+
+Gerbers currently don't exist in this repository. Recent KiCad builds have had a bug with Gerber export that bit me when I was having this board made and I don't want to go posting files until I'm more confident. Generate yourself, at your own risk.
+
 [Elliott Sound Products]: http://sound-au.com/project06.htm
 [Schematic]: ../master/phonopreamp.pdf
 [LICENSE]: ../master/COPYING
