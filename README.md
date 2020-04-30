@@ -11,8 +11,13 @@ The CAD files were created with a development build of KiCad from April 2020; a 
 - [Schematic]
 - [BOM] in Digi-Key bulk add format
 
+## Revision B
+
+This repository includes a Revision B, which I have not yet actually built. See the [changelog] for more information.
+
 [Elliott Sound Products]: http://sound-au.com/project06.htm
 [Schematic]: ../master/phonopreamp.pdf
 [LICENSE]: ../master/COPYING
+[changelog]: ../master/CHANGELOG
 [render_small]: ../master/phonopreamp_small.png
 [BOM]: ../master/phonopreamp/bom.txt

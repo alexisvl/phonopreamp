@@ -5,9 +5,9 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Phono preamp"
-Date ""
-Rev ""
-Comp "CC BY-NC-SA 2.0 — Attribution-NonCommercial-ShareAlike"
+Date "2020-04-29"
+Rev "B"
+Comp "CC BY-NC-SA 3.0 — Attribution-NonCommercial-ShareAlike"
 Comment1 "Power and modifications by Alexis Lockwood"
 Comment2 "Filter design modified from sound-au.com/project06.htm, noncommercial only!"
 Comment3 ""
@@ -49,11 +49,8 @@ Connection ~ 3700 5250
 Connection ~ 5700 6250
 Connection ~ 3950 6250
 Connection ~ 6300 5450
-Connection ~ 5150 1000
-Connection ~ 5150 2300
 Connection ~ 4650 3350
 Connection ~ 4650 5350
-Connection ~ 4850 1650
 Connection ~ 5800 1000
 Connection ~ 6650 1000
 Connection ~ 5800 2300
@@ -289,7 +286,7 @@ Wire Wire Line
 Wire Wire Line
 	4600 1650 4600 1850
 Wire Wire Line
-	4600 1650 4850 1650
+	4600 1650 5300 1650
 Wire Wire Line
 	4600 1850 4600 2000
 Wire Wire Line
@@ -321,13 +318,9 @@ Wire Wire Line
 Wire Wire Line
 	4750 6300 4750 6250
 Wire Wire Line
-	4850 1600 4850 1650
+	4950 1000 5350 1000
 Wire Wire Line
-	4850 1650 5300 1650
-Wire Wire Line
-	4950 1000 5150 1000
-Wire Wire Line
-	4950 2300 5150 2300
+	4950 2300 5350 2300
 Wire Wire Line
 	5000 7800 5000 7350
 Wire Wire Line
@@ -346,14 +339,6 @@ Wire Wire Line
 	5100 6250 5150 6250
 Wire Wire Line
 	5100 6550 5100 6600
-Wire Wire Line
-	5150 950  5150 1000
-Wire Wire Line
-	5150 1000 5350 1000
-Wire Wire Line
-	5150 2300 5350 2300
-Wire Wire Line
-	5150 2350 5150 2300
 Wire Wire Line
 	5200 3350 5100 3350
 Wire Wire Line
@@ -658,6 +643,8 @@ Wire Notes Line
 	3800 1450 3800 1500
 Wire Notes Line
 	3800 1500 2350 1500
+Text Notes 400  9650 0    50   ~ 0
+CHANGES REV A → REV B:\n\n[sch] delete confusing useless PWR_FLAGs\n[sch] update license version to 3.0 (this was a mistake)\n[sch+pcb] J1: mounting pads to ground for mech reliability\n[bom] U1 to TI LM317 (from ON Semi) — better initial accuracy\n[pcb] add revision to silk\n[pcb] add missing keepout under R6, R7\n[pcb] delete extra via under Cb10\n[pcb] add ground via near Ca10\n[pcb] film caps: decrease thermal coupling to plane for less risky soldering\n[pcb] J1, SW1: remove thermals from mounting pads\n[pcb] fix input voltage label (was 12VAC, should be 16VAC)
 Text Notes 700  7350 0    50   ~ 0
 Tranformer:\nBOM 1 DK:237-1887-ND\n\nStandoffs:\nBOM 4 DK:36-24438-ND # top
 Text Notes 8500 1550 0    50   ~ 0
@@ -666,39 +653,6 @@ Text Label 5500 1000 0    50   ~ 0
 VIN+
 Text Label 5500 2300 0    50   ~ 0
 VIN-
-$Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 5EABCAEA
-P 4850 1600
-F 0 "#FLG0103" H 4850 1675 50  0001 C CNN
-F 1 "PWR_FLAG" H 4850 1750 45  0000 C CNN
-F 2 "" H 4850 1600 50  0001 C CNN
-F 3 "~" H 4850 1600 50  0001 C CNN
-	1    4850 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0102
-U 1 1 5EAB9BDA
-P 5150 950
-F 0 "#FLG0102" H 5150 1025 50  0001 C CNN
-F 1 "PWR_FLAG" H 5150 1100 45  0000 C CNN
-F 2 "" H 5150 950 50  0001 C CNN
-F 3 "~" H 5150 950 50  0001 C CNN
-	1    5150 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 5EABAC43
-P 5150 2350
-F 0 "#FLG0101" H 5150 2425 50  0001 C CNN
-F 1 "PWR_FLAG" H 5150 2500 45  0000 C CNN
-F 2 "" H 5150 2350 50  0001 C CNN
-F 3 "~" H 5150 2350 50  0001 C CNN
-	1    5150 2350
-	-1   0    0    1   
-$EndComp
 $Comp
 L power-all:+14V_closed #PWR0145
 U 1 1 5EA452E2
@@ -1021,6 +975,18 @@ F 2 "" H 1250 7900 50  0001 C CNN
 F 3 "" H 1250 7900 50  0001 C CNN
 F 4 "GND" H 1250 7800 50  0001 C CNN "Net"
 	1    1250 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power-all:GND #PWR0149
+U 1 1 5EB3CC19
+P 1600 1300
+F 0 "#PWR0149" H 1600 1100 50  0001 C CNN
+F 1 "GND" H 1600 1100 50  0001 C CNN
+F 2 "" H 1600 1300 50  0001 C CNN
+F 3 "" H 1600 1300 50  0001 C CNN
+F 4 "GND" H 1600 1200 50  0001 C CNN "Net"
+	1    1600 1300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2476,18 +2442,6 @@ F 4 "DK:563-1558-ND" H 3800 1300 50  0001 C CNN "BOM"
 	1    0    0    1   
 $EndComp
 $Comp
-L Connector:Barrel_Jack J1
-U 1 1 5EA7A973
-P 1600 1000
-F 0 "J1" H 1600 750 50  0000 C CNN
-F 1 "16VAC" H 1600 650 50  0000 C CNN
-F 2 "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal" H 1650 960 50  0001 C CNN
-F 3 "~" H 1650 960 50  0001 C CNN
-F 4 "DK:CP-063AH-ND" H 1600 1000 50  0001 C CNN "BOM"
-	1    1600 1000
-	1    0    0    -1  
-$EndComp
-$Comp
 L AltDevice:D_Bridge_+-AA_TekStyle D4
 U 1 1 5EA6C796
 P 2400 4250
@@ -2524,14 +2478,26 @@ F 4 "DK:1655-1817-1-ND" H 7850 4450 50  0001 C CNN "BOM"
 	-1   0    0    1   
 $EndComp
 $Comp
+L Connector:Barrel_Jack_MountingPin J1
+U 1 1 5EA7A973
+P 1600 1000
+F 0 "J1" H 1600 1300 50  0000 C CNN
+F 1 "16VAC" H 1600 1200 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal" H 1650 960 50  0001 C CNN
+F 3 "~" H 1650 960 50  0001 C CNN
+F 4 "DK:CP-063AH-ND" H 1600 1000 50  0001 C CNN "BOM"
+	1    1600 1000
+	1    0    0    -1  
+$EndComp
+$Comp
 L Regulator_Linear:LM317L_SO8 U1
 U 1 1 5EA4D898
 P 6250 1000
-F 0 "U1" H 6100 700 50  0000 C CNN
-F 1 "LM317LD" H 6100 600 50  0000 C CNN
+F 0 "U1" H 6250 600 50  0000 C CNN
+F 1 "LM317LMX" H 6250 500 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6250 1200 50  0001 C CIN
 F 3 "" H 6250 800 50  0001 C CNN
-F 4 "DK:LM317LDR2GOSCT-ND" H 6250 1000 50  0001 C CNN "BOM"
+F 4 "DK:LM317LMX/NOPBCT-ND" H 6250 1000 50  0001 C CNN "BOM"
 	1    6250 1000
 	1    0    0    -1  
 $EndComp
@@ -2539,8 +2505,8 @@ $Comp
 L Regulator_Linear:LM337L_SO8 U2
 U 1 1 5EA4E594
 P 6250 2300
-F 0 "U2" H 6100 2800 50  0000 C CNN
-F 1 "LM337LMX" H 6100 2700 50  0000 C CNN
+F 0 "U2" H 6250 2800 50  0000 C CNN
+F 1 "LM337LMX" H 6250 2700 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6250 2100 50  0001 C CIN
 F 3 "" H 6250 2300 50  0001 C CNN
 F 4 "DK:LM337LMX/NOPBCT-ND" H 6250 2300 50  0001 C CNN "BOM"

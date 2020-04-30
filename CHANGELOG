@@ -1,0 +1,14 @@
+2020-04-29  Alexis Lockwood  <alexislockwood@fastmail.com>
+
+* project: Release revision B.
+* sch: delete confusing and useless PWR_FLAGs
+* sch: update license version to 3.0 (this was a mistake)
+* sch+pcb (J1): mounting pads to ground for mechanical reliability
+* bom (U1): use TI LM317LMX instead of ON Semi part for better initial accuracy
+* pcb (silk): add revision to silk
+* pcb (silk): fix input voltage label (was 12VAC, should be 16VAC)
+* pcb (copper, R6, R7): add missing keepout under R6, R7
+* pcb (copper, Cb10): delete extra via under Cb10
+* pcb (copper, Ca10): add ground via near Ca10
+* pcb (copper, Ca2, Ca5, Ca10, Cb2, Cb5, Cb10): decrease thermal coupling to plane for less risky soldering
+* pcb (copper, J1, SW1): remove thermals from mounting pads
